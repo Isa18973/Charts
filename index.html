@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js"
+        integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<canvas id="myChart"></canvas>
+<script>
+    var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Pizza', 'Hamburger', 'Taco', 'Hotdogs', 'GrilledCheese'],
+            datasets: [{
+                label: '# of votes',
+                data: [4, 0, 12, 2, 0],
+                backgroundColor: [
+                    'rgba(0, 255, 132, 0.2)',
+                    'rgba(255, 30, 30, 0.2)',
+                    'rgba(0, 0, 255, 0.2)',
+                    'rgba(255, 128, 0, 0.2)'
+
+                ],
+                borderColor: [
+                    'rgba(0, 255, 0, 1)',
+                    'rgba(255, 30, 30, 1)',
+                    'rgba(0, 0, 255, 1)',
+                    'rgba(255, 128, 0, 1)'
+                ],
+                borderWidth: 5
+
+            }]
+        },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                indexAxis: 'y'
+            }
+    });
+</script>
+</body>
+</html>
